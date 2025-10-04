@@ -1,0 +1,210 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Sales Order Schema",
+  "description": "JSON contract for Sales Order linking to Customer/Collection/Division/Size masters.",
+  "type": "object",
+  "properties": {
+    "orderNO": {
+      "type": "string",
+      "maxLength": 25,
+      "description": "Primary key for the sales order."
+    },
+    "article": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Description of finished good."
+    },
+    "customerCode": {
+      "type": "string",
+      "maxLength": 10,
+      "description": "FK to Customer Master."
+    },
+    "divisionCode": {
+      "type": "string",
+      "maxLength": 10,
+      "description": "FK to Division Master."
+    },
+    "collectionCode": {
+      "type": "string",
+      "maxLength": 10,
+      "description": "FK to Collection Master."
+    },
+    "deliveryDate": {
+      "type": ["string", "null"],
+      "maxLength": 20,
+      "description": "Requested delivery date from customer (e.g., 23-Dec-25). Optional."
+    },
+    "productGroupId": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Product group identifier."
+    },
+    "poCust": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Customer Purchase Order number."
+    },
+    "colorFinishGood": {
+      "type": "string",
+      "maxLength": 250,
+      "description": "Finished good color."
+    },
+    "sizeCode": {
+      "type": "string",
+      "maxLength": 10,
+      "description": "FK to Size Master."
+    },
+    "qtyOrder": {
+      "type": "number",
+      "description": "Ordered quantity."
+    },
+    "orderType": {
+      "type": "string",
+      "enum": ["FOB", "CMT"],
+      "maxLength": 10,
+      "description": "Order type (FOB or CMT)."
+    },
+    "orc": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "ORC for finished good."
+    }
+  },
+  "required": [
+    "orderNO",
+    "article",
+    "customerCode",
+    "divisionCode",
+    "collectionCode",
+    "productGroupId",
+    "poCust",
+    "colorFinishGood",
+    "sizeCode",
+    "qtyOrder",
+    "orderType",
+    "orc"
+  ],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "orderNO": "PS13645",
+      "article": "SAMPLE QN QN000007-S26 ADD",
+      "customerCode": "BY0019",
+      "divisionCode": "HB",
+      "collectionCode": "SPR26",
+      "deliveryDate": "23-Dec-25",
+      "productGroupId": "BOX BELT",
+      "poCust": "QN25-ML12002",
+      "colorFinishGood": "COGNAC",
+      "sizeCode": "ITALIAN",
+      "qtyOrder": 1,
+      "orderType": "CMT",
+      "orc": "QN25-ML12002"
+    },
+    {
+      "orderNO": "PS13644",
+      "article": "SAMPLE QN QN000007-S26 TEST",
+      "customerCode": "BY0019",
+      "divisionCode": "HB",
+      "collectionCode": "SPR26",
+      "deliveryDate": "23-Dec-25",
+      "productGroupId": "BOX BELT",
+      "poCust": "QN25-ML12002",
+      "colorFinishGood": "COGNAC",
+      "sizeCode": "ITALIAN",
+      "qtyOrder": 1,
+      "orderType": "CMT",
+      "orc": "QN25-ML12002"
+    },
+    {
+      "orderNO": "PS13643",
+      "article": "QN000007-S26",
+      "customerCode": "BY0019",
+      "divisionCode": "HB",
+      "collectionCode": "SPR26",
+      "deliveryDate": "23-Dec-25",
+      "productGroupId": "BOX BELT",
+      "poCust": "QN25-ML12002",
+      "colorFinishGood": "COGNAC",
+      "sizeCode": "ITALIAN",
+      "qtyOrder": 300,
+      "orderType": "CMT",
+      "orc": "QN25-ML12002"
+    },
+    {
+      "orderNO": "PS13642",
+      "article": "SAMPLE QN QN000007G-S26 ADD",
+      "customerCode": "BY0019",
+      "divisionCode": "HB",
+      "collectionCode": "SPR26",
+      "deliveryDate": "23-Dec-25",
+      "productGroupId": "BOX BELT",
+      "poCust": "QN25-ML12001",
+      "colorFinishGood": "BLACK",
+      "sizeCode": "ITALIAN",
+      "qtyOrder": 1,
+      "orderType": "CMT",
+      "orc": "QN25-ML12001"
+    },
+    {
+      "orderNO": "PS13641",
+      "article": "SAMPLE QN QN000007G-S26 TEST",
+      "customerCode": "BY0019",
+      "divisionCode": "HB",
+      "collectionCode": "SPR26",
+      "deliveryDate": "23-Dec-25",
+      "productGroupId": "BOX BELT",
+      "poCust": "QN25-ML12001",
+      "colorFinishGood": "BLACK",
+      "sizeCode": "ITALIAN",
+      "qtyOrder": 1,
+      "orderType": "CMT",
+      "orc": "QN25-ML12001"
+    },
+    {
+      "orderNO": "PS13640",
+      "article": "QN000007G-S26",
+      "customerCode": "BY0019",
+      "divisionCode": "HB",
+      "collectionCode": "SPR26",
+      "deliveryDate": "23-Dec-25",
+      "productGroupId": "BOX BELT",
+      "poCust": "QN25-ML12001",
+      "colorFinishGood": "BLACK",
+      "sizeCode": "ITALIAN",
+      "qtyOrder": 480,
+      "orderType": "CMT",
+      "orc": "QN25-ML12001"
+    },
+    {
+      "orderNO": "PS13639",
+      "article": "SAMPLE QN QN000007-S26 ADD",
+      "customerCode": "BY0019",
+      "divisionCode": "HB",
+      "collectionCode": "SPR26",
+      "deliveryDate": "11-Nov-25",
+      "productGroupId": "BOX BELT",
+      "poCust": "27901",
+      "colorFinishGood": "COGNAC",
+      "sizeCode": "ITALIAN",
+      "qtyOrder": 1,
+      "orderType": "CMT",
+      "orc": "QN25-ML11002"
+    },
+    {
+      "orderNO": "PS13638",
+      "article": "SAMPLE QN QN000007-S26 TEST",
+      "customerCode": "BY0019",
+      "divisionCode": "HB",
+      "collectionCode": "SPR26",
+      "deliveryDate": "11-Nov-25",
+      "productGroupId": "BOX BELT",
+      "poCust": "27901",
+      "colorFinishGood": "COGNAC",
+      "sizeCode": "ITALIAN",
+      "qtyOrder": 1,
+      "orderType": "CMT",
+      "orc": "QN25-ML11002"
+    }
+  ]
+}

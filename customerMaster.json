@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Customer Master Schema",
+  "description": "JSON contract for Customer Master.",
+  "type": "object",
+  "properties": {
+    "customerCode": {
+      "type": "string",
+      "maxLength": 10,
+      "description": "Primary customer code."
+    },
+    "customerName": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Customer name."
+    },
+    "address": {
+      "type": "string",
+      "maxLength": 250,
+      "description": "Customer address."
+    },
+    "city": {
+      "type": ["string", "null"],
+      "maxLength": 50,
+      "description": "City (optional)."
+    },
+    "province": {
+      "type": ["string", "null"],
+      "maxLength": 50,
+      "description": "Province/state (optional)."
+    },
+    "country": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Country."
+    }
+  },
+  "required": ["customerCode", "customerName", "address", "country"],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "customerCode": "MK115",
+      "customerName": "MICHAEL  KORS KOREA YUHAN HOESA, LTD",
+      "address": "DDLC 3rd Fl DHL,33-48, PREMIUM OUTLET-ROAD, MAJANG-MYEON, ICHEON-SI, GYEONGGI-DO, KOREA 17384",
+      "city": null,
+      "province": null,
+      "country": "KOREA"
+    },
+    {
+      "customerCode": "MKSMPL05",
+      "customerName": "MICHAEL KORS USA,",
+      "address": "11 West 42nd Street, 21STFloor\nNew York, NY 10036",
+      "city": "NEW YORK",
+      "province": null,
+      "country": "USA"
+    },
+    {
+      "customerCode": "GS002",
+      "customerName": "DISTRIBUIDORA GUESS CHILE LIMITADA",
+      "address": "AVENIDA DEL PARQUE 4314 COMUNA DE HUECHURABA",
+      "city": "SANTIAGO",
+      "province": "METROPOLITANA",
+      "country": "BRAZIL"
+    },
+    {
+      "customerCode": "JSJ759",
+      "customerName": "PT J S JAKARTA",
+      "address": "Jl. Raya Narogong Km.23, 3 Rt.03 Rw.04 Dayeuh",
+      "city": "BOGOR",
+      "province": "JAWA BARAT",
+      "country": "INDONESIA"
+    }
+  ]
+}

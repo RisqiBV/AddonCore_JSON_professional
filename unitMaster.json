@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Unit Master Schema",
+  "description": "JSON contract for unit master mapping with internal ERP alias.",
+  "type": "object",
+  "properties": {
+    "unitCode": {
+      "type": "string",
+      "maxLength": 10,
+      "description": "Primary unit code."
+    },
+    "unitDescription": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Unit description."
+    },
+    "aliasUnitCode": {
+      "type": "string",
+      "maxLength": 10,
+      "description": "Internal ERP unit code alias."
+    }
+  },
+  "required": ["unitCode", "unitDescription", "aliasUnitCode"],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "unitCode": "Blank",
+      "unitDescription": "Blank",
+      "aliasUnitCode": "Blank"
+    },
+    {
+      "unitCode": "NIU",
+      "unitDescription": "NIU",
+      "aliasUnitCode": "NIU"
+    },
+    {
+      "unitCode": "NA",
+      "unitDescription": "Not Available",
+      "aliasUnitCode": "Not Available"
+    },
+    {
+      "unitCode": "m2",
+      "unitDescription": "m2",
+      "aliasUnitCode": "m2"
+    },
+    {
+      "unitCode": "MTK",
+      "unitDescription": "SQUARE METRE",
+      "aliasUnitCode": "SQUARE METRE"
+    },
+    {
+      "unitCode": "TNE",
+      "unitDescription": "METRIC TON",
+      "aliasUnitCode": "METRIC TON"
+    }
+  ]
+}

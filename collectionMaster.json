@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Collection Master Schema",
+  "description": "JSON contract for collection master linking to Customer Master via customerCode.",
+  "type": "object",
+  "properties": {
+    "customerCode": {
+      "type": "string",
+      "maxLength": 10,
+      "description": "Foreign key to Customer Master."
+    },
+    "collectionCode": {
+      "type": "string",
+      "maxLength": 10,
+      "description": "Primary key for the collection."
+    },
+    "discription": {
+      "type": "string",
+      "maxLength": 255,
+      "description": "Collection description."
+    }
+  },
+  "required": ["customerCode", "collectionCode", "discription"],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "customerCode": "GS66",
+      "collectionCode": "SUM25",
+      "discription": "SUMMER 2025"
+    },
+    {
+      "customerCode": "BY18",
+      "collectionCode": "SPR25",
+      "discription": "SPRING25"
+    },
+    {
+      "customerCode": "CK657",
+      "collectionCode": "SPR25",
+      "discription": "SPRING25"
+    },
+    {
+      "customerCode": "MK288",
+      "collectionCode": "HOL25",
+      "discription": "HOLIDAY 2025"
+    },
+    {
+      "customerCode": "BY780",
+      "collectionCode": "SUM24",
+      "discription": "SUMMER 24"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Division Master Schema",
+  "description": "JSON contract for division master linking to Customer Master via customerCode.",
+  "type": "object",
+  "properties": {
+    "customerCode": {
+      "type": "string",
+      "maxLength": 10,
+      "description": "Foreign key to Customer Master."
+    },
+    "divisionCode": {
+      "type": "string",
+      "maxLength": 10,
+      "description": "Primary key for the division."
+    },
+    "discription": {
+      "type": "string",
+      "maxLength": 255,
+      "description": "Division description."
+    }
+  },
+  "required": ["customerCode", "divisionCode", "discription"],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "customerCode": "BY0019",
+      "divisionCode": "HB",
+      "discription": "HANDBAG"
+    },
+    {
+      "customerCode": "BY0018",
+      "divisionCode": "HB",
+      "discription": "HANDBAG"
+    },
+    {
+      "customerCode": "BY507",
+      "divisionCode": "SLG",
+      "discription": "SLG"
+    },
+    {
+      "customerCode": "BY507",
+      "divisionCode": "HB",
+      "discription": "HAND BAG"
+    }
+  ]
+}

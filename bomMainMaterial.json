@@ -1,0 +1,251 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BOM Main Material Schema",
+  "description": "JSON contract for Bill Of Material (Main Material) per Sales Order.",
+  "type": "object",
+  "properties": {
+    "orderNO": {
+      "type": "string",
+      "maxLength": 25,
+      "description": "PRO No (links to Sales Order)."
+    },
+    "itemCode": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Material ItemCode (must belong to Item Master with category MAIN)."
+    },
+    "colorMaterial": {
+      "type": "string",
+      "maxLength": 250,
+      "description": "Material color."
+    },
+    "consumption": {
+      "type": "number",
+      "multipleOf": 0.00001,
+      "description": "Material requirement per 1 pcs finished good."
+    },
+    "unitCode": {
+      "type": "string",
+      "maxLength": 10,
+      "description": "UnitCode of material (links to Unit Master)."
+    },
+    "colorFinishGood": {
+      "type": "string",
+      "maxLength": 250,
+      "description": "Finished good color."
+    },
+    "sizeCode": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Size code (links to Size Master)."
+    },
+    "orderQty": {
+      "type": "number",
+      "description": "Ordered quantity (pcs)."
+    },
+    "totalQty": {
+      "type": "number",
+      "description": "Total material requirement for the order."
+    },
+    "customerCode": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Customer code."
+    }
+  },
+  "required": [
+    "orderNO",
+    "itemCode",
+    "colorMaterial",
+    "consumption",
+    "unitCode",
+    "colorFinishGood",
+    "sizeCode",
+    "orderQty",
+    "totalQty",
+    "customerCode"
+  ],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "orderNO": "PS13564",
+      "itemCode": "M0001072",
+      "colorMaterial": "NATURAL A",
+      "consumption": 0.179,
+      "unitCode": "YARD",
+      "colorFinishGood": "BLACK,DOVE,ICE BLUE,SOFT PINK",
+      "sizeCode": "CROSSBODY",
+      "orderQty": 3335,
+      "totalQty": 597.299,
+      "customerCode": "58\""
+    },
+    {
+      "orderNO": "PS13564",
+      "itemCode": "M0001072",
+      "colorMaterial": "BLACK",
+      "consumption": 0.179,
+      "unitCode": "YARD",
+      "colorFinishGood": "BLACK,DOVE,ICE BLUE,SOFT PINK",
+      "sizeCode": "CROSSBODY",
+      "orderQty": 2890,
+      "totalQty": 517.599,
+      "customerCode": "58\""
+    },
+    {
+      "orderNO": "PS13564",
+      "itemCode": "M0006508",
+      "colorMaterial": "NATURAL",
+      "consumption": 0.001,
+      "unitCode": "YARD",
+      "colorFinishGood": "BLACK,DOVE,ICE BLUE,SOFT PINK",
+      "sizeCode": "CROSSBODY",
+      "orderQty": 3335,
+      "totalQty": 3.002,
+      "customerCode": "52\""
+    },
+    {
+      "orderNO": "PS13564",
+      "itemCode": "M0006508",
+      "colorMaterial": "BLACK",
+      "consumption": 0.001,
+      "unitCode": "YARD",
+      "colorFinishGood": "BLACK,DOVE,ICE BLUE,SOFT PINK",
+      "sizeCode": "CROSSBODY",
+      "orderQty": 2890,
+      "totalQty": 2.601,
+      "customerCode": "52\""
+    },
+    {
+      "orderNO": "PS13564",
+      "itemCode": "M0007449",
+      "colorMaterial": "SOFT PINK 118",
+      "consumption": 0.144,
+      "unitCode": "YARD",
+      "colorFinishGood": "BLACK,DOVE,ICE BLUE,SOFT PINK",
+      "sizeCode": "CROSSBODY",
+      "orderQty": 760,
+      "totalQty": 109.592,
+      "customerCode": "52\" 0.95-1.0MM"
+    },
+    {
+      "orderNO": "PS13564",
+      "itemCode": "M0007449",
+      "colorMaterial": "ICE BLUE 108",
+      "consumption": 0.144,
+      "unitCode": "YARD",
+      "colorFinishGood": "BLACK,DOVE,ICE BLUE,SOFT PINK",
+      "sizeCode": "CROSSBODY",
+      "orderQty": 300,
+      "totalQty": 43.26,
+      "customerCode": "52\" 0.95-1.0MM"
+    },
+    {
+      "orderNO": "PS13564",
+      "itemCode": "M0007449",
+      "colorMaterial": "DOVE 115",
+      "consumption": 0.144,
+      "unitCode": "YARD",
+      "colorFinishGood": "BLACK,DOVE,ICE BLUE,SOFT PINK",
+      "sizeCode": "CROSSBODY",
+      "orderQty": 2275,
+      "totalQty": 328.055,
+      "customerCode": "52\" 0.95-1.0MM"
+    },
+    {
+      "orderNO": "PS13564",
+      "itemCode": "M0007449",
+      "colorMaterial": "BLACK",
+      "consumption": 0.144,
+      "unitCode": "YARD",
+      "colorFinishGood": "BLACK,DOVE,ICE BLUE,SOFT PINK",
+      "sizeCode": "CROSSBODY",
+      "orderQty": 2890,
+      "totalQty": 416.738,
+      "customerCode": "52\" 0.95-1.0MM"
+    },
+    {
+      "orderNO": "PS13525",
+      "itemCode": "M0009210",
+      "colorMaterial": "TAUPE",
+      "consumption": 0.473,
+      "unitCode": "YARD",
+      "colorFinishGood": "BLACK,NAVY,SAGE",
+      "sizeCode": "ESPERATO",
+      "orderQty": 7006,
+      "totalQty": 3311.736,
+      "customerCode": "56\""
+    },
+    {
+      "orderNO": "PS13525",
+      "itemCode": "M0009208",
+      "colorMaterial": "TOBACCO",
+      "consumption": 0.006,
+      "unitCode": "YARD",
+      "colorFinishGood": "BLACK,NAVY,SAGE",
+      "sizeCode": "ESPERATO",
+      "orderQty": 7006,
+      "totalQty": 43.437,
+      "customerCode": "56\""
+    },
+    {
+      "orderNO": "PS13525",
+      "itemCode": "M0009208",
+      "colorMaterial": "TOBACCO",
+      "consumption": 0.08,
+      "unitCode": "YARD",
+      "colorFinishGood": "BLACK,NAVY,SAGE",
+      "sizeCode": "ESPERATO",
+      "orderQty": 4004,
+      "totalQty": 321.922,
+      "customerCode": "56\""
+    },
+    {
+      "orderNO": "PS13525",
+      "itemCode": "M0009208",
+      "colorMaterial": "BLACK",
+      "consumption": 0.08,
+      "unitCode": "YARD",
+      "colorFinishGood": "BLACK,NAVY,SAGE",
+      "sizeCode": "ESPERATO",
+      "orderQty": 3002,
+      "totalQty": 241.361,
+      "customerCode": "56\""
+    },
+    {
+      "orderNO": "PS13525",
+      "itemCode": "M0009207",
+      "colorMaterial": "SAGE",
+      "consumption": 0.183,
+      "unitCode": "YARD",
+      "colorFinishGood": "BLACK,NAVY,SAGE",
+      "sizeCode": "ESPERATO",
+      "orderQty": 2002,
+      "totalQty": 366.766,
+      "customerCode": "56\""
+    },
+    {
+      "orderNO": "PS13525",
+      "itemCode": "M0009207",
+      "colorMaterial": "DARK NAVY",
+      "consumption": 0.183,
+      "unitCode": "YARD",
+      "colorFinishGood": "BLACK,NAVY,SAGE",
+      "sizeCode": "ESPERATO",
+      "orderQty": 2002,
+      "totalQty": 366.766,
+      "customerCode": "56\""
+    },
+    {
+      "orderNO": "PS13525",
+      "itemCode": "M0009207",
+      "colorMaterial": "BLACK",
+      "consumption": 0.183,
+      "unitCode": "YARD",
+      "colorFinishGood": "BLACK,NAVY,SAGE",
+      "sizeCode": "ESPERATO",
+      "orderQty": 3002,
+      "totalQty": 549.966,
+      "customerCode": "56\""
+    }
+  ]
+}

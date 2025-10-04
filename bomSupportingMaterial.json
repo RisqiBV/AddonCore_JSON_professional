@@ -1,0 +1,166 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BOM Supporting Material Schema",
+  "description": "JSON contract for Bill Of Material (Supporting Material) per Sales Order.",
+  "type": "object",
+  "properties": {
+    "orderNO": {
+      "type": "string",
+      "maxLength": 25,
+      "description": "PRO No (links to Sales Order)."
+    },
+    "itemCode": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Material ItemCode (must belong to Item Master with category SUPPORTING)."
+    },
+    "colorMaterial": {
+      "type": "string",
+      "maxLength": 250,
+      "description": "Material color."
+    },
+    "consumption": {
+      "type": "number",
+      "multipleOf": 0.00001,
+      "description": "Material requirement per 1 pcs finished good."
+    },
+    "unitCode": {
+      "type": "string",
+      "maxLength": 10,
+      "description": "UnitCode of material (links to Unit Master)."
+    },
+    "colorFinishGood": {
+      "type": "string",
+      "maxLength": 250,
+      "description": "Finished good color."
+    },
+    "sizeCode": {
+      "type": "string",
+      "maxLength": 10,
+      "description": "Size code (links to Size Master)."
+    },
+    "orderQty": {
+      "type": "number",
+      "description": "Ordered quantity (pcs)."
+    },
+    "totalQty": {
+      "type": "number",
+      "description": "Total material requirement for the order."
+    },
+    "customerCode": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Optional customer code (when applicable)."
+    }
+  },
+  "required": [
+    "orderNO",
+    "itemCode",
+    "colorMaterial",
+    "consumption",
+    "unitCode",
+    "colorFinishGood",
+    "sizeCode",
+    "orderQty",
+    "totalQty"
+  ],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "orderNO": "PS13564",
+      "itemCode": "D0001552",
+      "colorMaterial": "SHINY GOLD",
+      "consumption": 1,
+      "unitCode": "EA",
+      "colorFinishGood": "BLACK,DOVE,ICE BLUE,SOFT PINK",
+      "sizeCode": "CROSSBODY",
+      "orderQty": 6225,
+      "totalQty": 6225,
+      "customerCode": "---"
+    },
+    {
+      "orderNO": "PS13564",
+      "itemCode": "D0008523",
+      "colorMaterial": "SHINY GOLD",
+      "consumption": 1,
+      "unitCode": "Set",
+      "colorFinishGood": "BLACK,DOVE,ICE BLUE,SOFT PINK",
+      "sizeCode": "CROSSBODY",
+      "orderQty": 6225,
+      "totalQty": 6225,
+      "customerCode": "---"
+    },
+    {
+      "orderNO": "PS13564",
+      "itemCode": "D0001919",
+      "colorMaterial": "SHINY GOLD",
+      "consumption": 4,
+      "unitCode": "EA",
+      "colorFinishGood": "BLACK,DOVE,ICE BLUE,SOFT PINK",
+      "sizeCode": "CROSSBODY",
+      "orderQty": 6225,
+      "totalQty": 24900,
+      "customerCode": "---"
+    },
+    {
+      "orderNO": "PS13564",
+      "itemCode": "D0000134",
+      "colorMaterial": "SHINY GOLD",
+      "consumption": 1,
+      "unitCode": "EA",
+      "colorFinishGood": "BLACK,DOVE,ICE BLUE,SOFT PINK",
+      "sizeCode": "CROSSBODY",
+      "orderQty": 6225,
+      "totalQty": 6225,
+      "customerCode": "---"
+    },
+    {
+      "orderNO": "PS13564",
+      "itemCode": "Z0000581",
+      "colorMaterial": "B515",
+      "consumption": 0.68,
+      "unitCode": "YARD",
+      "colorFinishGood": "BLACK,DOVE,ICE BLUE,SOFT PINK",
+      "sizeCode": "CROSSBODY",
+      "orderQty": 2275,
+      "totalQty": 1547,
+      "customerCode": "#5"
+    },
+    {
+      "orderNO": "PS13564",
+      "itemCode": "Z0000581",
+      "colorMaterial": "B812",
+      "consumption": 0.68,
+      "unitCode": "YARD",
+      "colorFinishGood": "BLACK,DOVE,ICE BLUE,SOFT PINK",
+      "sizeCode": "CROSSBODY",
+      "orderQty": 300,
+      "totalQty": 204,
+      "customerCode": "#5"
+    },
+    {
+      "orderNO": "PS13564",
+      "itemCode": "Z0000581",
+      "colorMaterial": "B840",
+      "consumption": 0.68,
+      "unitCode": "YARD",
+      "colorFinishGood": "BLACK,DOVE,ICE BLUE,SOFT PINK",
+      "sizeCode": "CROSSBODY",
+      "orderQty": 760,
+      "totalQty": 516.8,
+      "customerCode": "#5"
+    },
+    {
+      "orderNO": "PS13564",
+      "itemCode": "Z0000581",
+      "colorMaterial": "Y580",
+      "consumption": 0.68,
+      "unitCode": "YARD",
+      "colorFinishGood": "BLACK,DOVE,ICE BLUE,SOFT PINK",
+      "sizeCode": "CROSSBODY",
+      "orderQty": 2890,
+      "totalQty": 1965.2,
+      "customerCode": "#5"
+    }
+  ]
+}
