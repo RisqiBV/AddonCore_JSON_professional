@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Item Master Material Schema",
+  "description": "JSON contract for Item Master (materialType, itemCode, itemName).",
+  "type": "object",
+  "properties": {
+    "materialType": {
+      "type": "string",
+      "maxLength": 50,
+      "enum": ["Supporting", "Main"],
+      "description": "Only 'Supporting' or 'Main'."
+    },
+    "itemCode": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Primary key for the item."
+    },
+    "itemName": {
+      "type": "string",
+      "maxLength": 250,
+      "description": "Item name/description."
+    }
+  },
+  "required": ["materialType", "itemCode", "itemName"],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "materialType": "Supporting",
+      "itemCode": "O0001691",
+      "itemName": "(SL) SCL-AVRY-DISPK-HT-001 CO-BRANDED HANGTAG -AVERY"
+    },
+    {
+      "materialType": "Supporting",
+      "itemCode": "D0008689",
+      "itemName": "(GS) LOGO GUESS 31.5X6.85MM SH6588 LEG LENGTH 4MM"
+    },
+    {
+      "materialType": "Supporting",
+      "itemCode": "D0015325",
+      "itemName": "(GS) METAL WASHER ONLY WS7865A"
+    },
+    {
+      "materialType": "Main",
+      "itemCode": "RM-PL-0001",
+      "itemName": "Resin Pellets Grade A"
+    }
+  ]
+}

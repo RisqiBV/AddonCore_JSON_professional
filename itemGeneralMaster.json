@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Item Master General Schema",
+  "description": "JSON contract for general item master mapping internal/vendor units and values.",
+  "type": "object",
+  "properties": {
+    "itemCode": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Primary key for the item."
+    },
+    "itemName": {
+      "type": "string",
+      "maxLength": 250,
+      "description": "Item name/description."
+    },
+    "unitInternal": {
+      "type": "string",
+      "maxLength": 10,
+      "description": "Internal unit of measure (e.g., PCS, SET)."
+    },
+    "unitVendor": {
+      "type": "string",
+      "maxLength": 10,
+      "description": "Vendor unit of measure (e.g., PCS, SET)."
+    },
+    "nilaiInternal": {
+      "type": "integer",
+      "description": "Internal unit value."
+    },
+    "nilaiVendor": {
+      "type": "integer",
+      "description": "Vendor unit value."
+    },
+    "category": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Item category (e.g., Spare Part, Machine)."
+    }
+  },
+  "required": [
+    "itemCode",
+    "itemName",
+    "unitInternal",
+    "unitVendor",
+    "nilaiInternal",
+    "nilaiVendor",
+    "category"
+  ],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "itemCode": "SP.1407",
+      "itemName": "MTK KIT 2000H VT-FA-IQ80",
+      "unitInternal": "SET",
+      "unitVendor": "SET",
+      "nilaiInternal": 1,
+      "nilaiVendor": 1,
+      "category": "Spare Part"
+    },
+    {
+      "itemCode": "SP9973",
+      "itemName": "SEKOCI JUKI E B1828-210-DAA",
+      "unitInternal": "PCS",
+      "unitVendor": "PCS",
+      "nilaiInternal": 1,
+      "nilaiVendor": 1,
+      "category": "Spare Part"
+    },
+    {
+      "itemCode": "MSJB.1116",
+      "itemName": "SIDE-IRONING MACHINE",
+      "unitInternal": "SET",
+      "unitVendor": "SET",
+      "nilaiInternal": 1,
+      "nilaiVendor": 1,
+      "category": "Mechine"
+    },
+    {
+      "itemCode": "MSJB.1115",
+      "itemName": "PNEUMATIC CRIMPING MACHINE (HEATED) IMPROVED VERSION",
+      "unitInternal": "SET",
+      "unitVendor": "SET",
+      "nilaiInternal": 1,
+      "nilaiVendor": 1,
+      "category": "Mechine"
+    },
+    {
+      "itemCode": "MSJB.1704",
+      "itemName": "OSCILLATING KNIFE CUTTING MACHINE H3-T",
+      "unitInternal": "SET",
+      "unitVendor": "SET",
+      "nilaiInternal": 1,
+      "nilaiVendor": 1,
+      "category": "Mechine"
+    }
+  ]
+}
