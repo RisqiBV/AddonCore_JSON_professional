@@ -50,7 +50,7 @@
     "customerCode": {
       "type": "string",
       "maxLength": 50,
-      "description": "Optional customer code (when applicable)."
+      "description": "customer code (if not applicable fill with '-'."
     }
   },
   "required": [
@@ -62,7 +62,8 @@
     "colorFinishGood",
     "sizeCode",
     "orderQty",
-    "totalQty"
+    "totalQty",
+    "customerCode"
   ],
   "additionalProperties": false,
   "examples": [
